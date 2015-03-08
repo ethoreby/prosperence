@@ -72,7 +72,8 @@
   font-size: 22px !important;
   line-height: 30px !important; }
 
-.favoriteBtn:hover {
+.favoriteBtn:hover,
+.favoriteActive {
   cursor: pointer;
   color: orange;
 }
