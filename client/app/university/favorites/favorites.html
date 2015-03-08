@@ -4,7 +4,7 @@
 
   <!-- Start video courses catalog -->
   <div id="catalog-photos" class="col-md-10">
-    <div class="col-md-4" ng-repeat="course in courses.results track by $index | filter:isFavorite()"
+    <div class="col-md-4" ng-repeat="course in courses.results track by $index | filter:{isFavorite(course)}"
          dir-paginate="course in courses.results | itemsPerPage: 12 track by $index" total-items="courses.totalCount">
       <div class="thumbnail">
         <div style="text-align:right;">

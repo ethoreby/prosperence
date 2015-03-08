@@ -18,7 +18,7 @@ angular.module('prosperenceApp')
   })
   .state('university.favorites', {
     url: '/favorites',
-    templateUrl: 'app/university/courses/courses.html',
+    templateUrl: 'app/university/favorites/favorites.html',
     controller: 'FavoritesCtrl'
   })
   .state('university.recommended', {
