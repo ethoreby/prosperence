@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('prosperenceApp')
-.controller('UniversityCtrl', ['$scope', '$rootScope', '$state', 'search',  function($scope, $rootScope, $state, search) {
+.controller('UniversityCtrl', ['$scope', '$rootScope', '$state', 'search', 'Auth',  function($scope, $rootScope, $state, search, Auth) {
   $scope.facetFields = "";
   $scope.filterFields = "";
   $scope.selectedItems = [];
@@ -17,6 +17,15 @@ angular.module('prosperenceApp')
   $scope.startMinutesFilter = 0;
   $scope.endMinutesFilter = 0;
   $scope.$state = $state;
+
+  $scope.currentUser = Auth.getCurrentUser();
+
+  $scope.toggleFavorite = function(youtubeId) {
+    $scope.currentUser.university = $scope.currentUser.university || {};
+    $scope.currentUser.university.favorites = $scope.currentUser.university.favorites || {};
+
+    $scope.currentUser.university.favorites[youtubeId] = !$scope.currentUser.university.favorites[youtubeId];
+  };
 
   $scope.doSearch = function (searchTerm, pageNumber, filterFields) {
     pageNumber = pageNumber || 0;

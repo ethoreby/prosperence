@@ -45,6 +45,6 @@ angular.module('prosperenceApp')
     $scope.courses.results = [];
     $scope.courses.totalCount = 0;
     $scope.searchInProgress = true;
-  })
+  });
+  
 }]);
-

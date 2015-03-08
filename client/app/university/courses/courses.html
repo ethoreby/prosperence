@@ -5,7 +5,12 @@
     <div class="col-md-4" ng-repeat="course in courses.results track by $index"
          dir-paginate="course in courses.results | itemsPerPage: 12 track by $index" total-items="courses.totalCount">
       <div class="thumbnail">
-
+        <div style="text-align:right;">
+          <div style="font-size: 10px; position: absolute; right: 50px; top: 10px;">favorite: </div>
+          <div class="favoriteBtn" ng-click="toggleFavorite(course.youtube_id)">
+            <span class="glyphicon glyphicon-star-empty" style="font-size:25px;" aria-hidden="true"></span>
+          </div>
+        </div>
         <div class="embed-responsive embed-responsive-16by9">
           <!-- use 'player' to reference player object. -->
           <youtube-video video-id="course.youtube_id"></youtube-video>-->
